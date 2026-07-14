@@ -30,6 +30,8 @@ bell-character = ignore
 EOF
 termux-reload-settings
 
+mv ~/.termux /data/data/com.termux/files/usr/etc/
+
 cat >> ~/.bashrc << 'EOF'
 alias ll='ls -l'
 alias la='ls -a'
@@ -39,7 +41,7 @@ alias update='pkg update -y && pkg upgrade -y'
 alias ffuf='/data/data/com.termux/files/home/.software/ffuf'
 EOF
 
- mv ~/.bashrc /data/data/com.termux/files/usr/etc/
+mv ~/.bashrc /data/data/com.termux/files/usr/etc/
 
 source /data/data/com.termux/files/usr/etc/.bashrc
 
