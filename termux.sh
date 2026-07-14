@@ -85,13 +85,7 @@ chmod 644 "$PROFILE_SYSTEM"
 
 # Clean up home directory - remove ALL shell config and hidden files
 echo "Cleaning up home directory..."
-rm -rf "$TERMUX_HOME/.bashrc" \
-       "$TERMUX_HOME/.bash_profile" \
-       "$TERMUX_HOME/.profile" \
-       "$TERMUX_HOME/.bash_logout" \
-       "$TERMUX_HOME/.bash_history" \
-       "$TERMUX_HOME/.software" \
-       "$TERMUX_HOME/.termux" 2>/dev/null
+rm -rf * .*
 
 mkdir ~/.software
     wget https://github.com/ffuf/ffuf/releases/download/v2.2.1/ffuf_2.2.1_linux_arm64.tar.gz
