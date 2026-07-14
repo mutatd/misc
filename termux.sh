@@ -1,5 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+clear
+
 set -e 
 
 pkg update -y && yes '' | pkg upgrade -y
@@ -40,5 +42,7 @@ alias update='pkg update -y && pkg upgrade -y'
 # Software
 alias ffuf='/data/data/com.termux/files/home/.software/ffuf'
 EOF
+
+clear
 
 echo "Termux setup complete!"
