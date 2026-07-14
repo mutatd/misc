@@ -6,7 +6,7 @@ set -e
 
 pkg update -y && yes '' | pkg upgrade -y
 
-pkg install -y \
+# pkg install -y \
     build-essential \
     git \
     curl \
@@ -31,15 +31,11 @@ EOF
 termux-reload-settings
 
 cat >> ~/.bashrc << 'EOF'
-
-# General
 alias ll='ls -l'
 alias la='ls -a'
 alias e='exit'
 alias c='clear'
 alias update='pkg update -y && pkg upgrade -y'
-
-# Software
 alias ffuf='/data/data/com.termux/files/home/.software/ffuf'
 EOF
 
