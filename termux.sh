@@ -16,10 +16,11 @@ pkg install -y \
     nmap \
     tor \
 
+cd
+
 mkdir ~/.software
     wget https://github.com/ffuf/ffuf/releases/download/v2.2.1/ffuf_2.2.1_linux_arm64.tar.gz
-    tar -xzf ffuf_2.2.1_linux_arm64.tar.gz -C ~/.software/ && rm ~/.software/
-    tar -xvf ffuf_2.2.1_linux_arm64.tar.gz -C ~/.software/ ffuf
+    tar -xvf ffuf_2.2.1_linux_arm64.tar.gz -C ~/.software/ ffuf && rm ffuf_2.2.1_linux_arm64.tar.gz
 
 mkdir -p ~/.termux
 cat > ~/.termux/termux.properties << 'EOF'
