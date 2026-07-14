@@ -38,8 +38,7 @@ alias c='clear'
 alias update='pkg update -y && pkg upgrade -y'
 
 # Software
-alias ffuf='~/.software/ffuf'
-
+alias ffuf='/data/data/com.termux/files/home/.software/ffuf'
 EOF
 
 echo "Termux setup complete!"
