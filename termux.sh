@@ -17,7 +17,9 @@ pkg install -y \
     tor \
 
 mkdir ~/.software
-
+    wget https://github.com/ffuf/ffuf/releases/download/v2.2.1/ffuf_2.2.1_linux_arm64.tar.gz
+    tar -xzf ffuf_2.2.1_linux_arm64.tar.gz -C ~/.software/ && rm ~/.software/
+    tar -xvf ffuf_2.2.1_linux_arm64.tar.gz -C ~/.software ffuf
 
 mkdir -p ~/.termux
 cat > ~/.termux/termux.properties << 'EOF'
@@ -28,11 +30,16 @@ EOF
 termux-reload-settings
 
 cat >> ~/.bashrc << 'EOF'
+
+# General
 alias ll='ls -l'
 alias la='ls -a'
 alias e='exit'
 alias c='clear'
 alias update='pkg update -y && pkg upgrade -y'
+
+# Software
+alias ffuf='~/.software/ffuf'
 
 EOF
 
