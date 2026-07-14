@@ -2,8 +2,6 @@
 
 clear
 
-set -e 
-
 pkg update -y && yes '' | pkg upgrade -y
 
 pkg install -y \
@@ -16,7 +14,7 @@ pkg install -y \
     nmap \
     tor \
 
-cd
+cd ~
 
 mkdir ~/.software
     wget https://github.com/ffuf/ffuf/releases/download/v2.2.1/ffuf_2.2.1_linux_arm64.tar.gz
