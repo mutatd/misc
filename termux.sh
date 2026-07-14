@@ -16,6 +16,9 @@ pkg install -y \
     nmap \
     tor \
 
+mkdir ~/.software
+
+
 mkdir -p ~/.termux
 cat > ~/.termux/termux.properties << 'EOF'
 extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]
