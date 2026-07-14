@@ -6,7 +6,7 @@ set -e
 
 pkg update -y && yes '' | pkg upgrade -y
 
-# pkg install -y \
+pkg install -y \
     build-essential \
     git \
     curl \
