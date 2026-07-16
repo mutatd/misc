@@ -2,7 +2,9 @@
 
 clear
 
-pkg update -y && yes '' | pkg upgrade -y
+set -e
+
+pkg update -y && pkg upgrade -y
 
 pkg install -y \
     build-essential \
@@ -12,17 +14,25 @@ pkg install -y \
     openssh \
     python \
     nmap \
-    tor \
+    tor
 
 cd ~
 
-mkdir ~/.software
-    wget https://github.com/ffuf/ffuf/releases/download/v2.2.1/ffuf_2.2.1_linux_arm64.tar.gz
-    tar -xvf ffuf_2.2.1_linux_arm64.tar.gz -C ~/.software/ ffuf && rm ffuf_2.2.1_linux_arm64.tar.gz
+mkdir -p ~/.software
+cd ~/.software
+wget https://github.com/ffuf/ffuf/releases/download/v2.2.1/ffuf_2.2.1_linux_arm64.tar.gz
+tar -xvf ffuf_2.2.1_linux_arm64.tar.gz && rm ffuf_2.2.1_linux_arm64.tar.gz
+cd ~
 
-mv ~/.termux /data/data/com.termux/files/usr/etc/
+mkdir -p ~/.termux
+cat > ~/.termux/termux.properties << 'EOF'
+extra-keys = [['ESC','/','-','HOME','UP','END','PGUP'],['TAB','CTRL','ALT','LEFT','DOWN','RIGHT','PGDN']]
+use-black-ui = true
+bell-character = ignore
+EOF
+termux-reload-settings
 
-cat >> /data/data/com.termux/files/usr/etc/.bashrc << 'EOF'
+cat >> ~/.bashrc << 'EOF'
 alias ll='ls -l'
 alias la='ls -a'
 alias e='exit'
@@ -31,9 +41,8 @@ alias update='pkg update -y && pkg upgrade -y'
 alias ffuf='/data/data/com.termux/files/home/.software/ffuf'
 EOF
 
-clear
-
-source /data/data/com.termux/files/usr/etc/.bashrc
+source ~/.bashrc
 
 clear
+
 echo "Termux setup complete!"
