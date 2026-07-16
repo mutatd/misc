@@ -31,8 +31,9 @@ alias update='pkg update -y && pkg upgrade -y'
 alias ffuf='/data/data/com.termux/files/home/.software/ffuf'
 EOF
 
+clear
+
 source /data/data/com.termux/files/usr/etc/.bashrc
 
 clear
-
 echo "Termux setup complete!"
